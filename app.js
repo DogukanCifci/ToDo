@@ -34,19 +34,25 @@ const elemanEkleme = (addButton.onclick = () => {
   //GENEL SILME ISLEMI
   //Hangisine tiklarsak o elemanin parentini silmesi icin forEach ile özel olarak hepsinin üzerinde gezindik
 
-  console.log("hello");
   const cöpKutusu = document
     .querySelectorAll(".cöp-kutusu") //all ile sectik hepsinin gelmesi icin
-    .forEach((a, i, array) => {
+    .forEach((a) => {
       a.onclick = () => {
-        //  console.log(i);
-        a.parentElement.remove();
+        const icerik = a.previousElementSibling.textContent; //Bu sekilde yandaki element olan p nin contentini bulduk
+
+        const silinecekIndis = liste.indexOf(icerik);
+        //  Daha sonra o content ile indexOf kullanrak o yazinin kacinci indiste oldugunu bulduk
+
+        // console.log(silinecekIndis);
+        // console.log(liste);
+
+        liste.splice(silinecekIndis, 1); //splice yöntemi ve 1 ile de listeden kalici olarak sildik. Silmemizin amaci yukarda tami,löamis oldugumuz ; Eger icerde daha önce girilmis deger varsa bi daha girilmesin oldugu icin, eger listeden silmezsek ekrandan silsek bile listede hala olacagi icin bi daha giremeyiz.
+
+        // console.log(liste);
+
+        a.parentElement.remove(); //Burda da ekrandan sildik.
         toplam--;
         totalKismi.textContent = toplam;
-        //Listeden silinmesini istedigim elemanin indisini bu sekilde buluyorum
-        //console.log(silinecekIndis);
-        //liste.splice(silinecekIndis + 1, 1);
-        //console.log(liste);
       };
     });
 
