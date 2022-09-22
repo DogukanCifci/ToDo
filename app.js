@@ -2,10 +2,12 @@
 
 let liste = [];
 let toplam = 0;
+let completedTaskTotal = 0;
 
 const addButton = document.querySelector("#todo-button");
 let kullaniciInput = document.querySelector("#todo-input");
 let totalKismi = document.querySelector("#toplam");
+let completed = document.querySelector("#tamamlanan");
 
 let silinecekIndis; //Cöp kutusuyla bir eleman sildikten sonra kendi olusturdugumuz listeden de silmek icin hangi elemani silcegimizi bulabilmek adina indis belirledim
 
@@ -37,16 +39,26 @@ const elemanEkleme = (addButton.onclick = () => {
     .querySelectorAll(".cöp-kutusu") //all ile sectik hepsinin gelmesi icin
     .forEach((a, i, array) => {
       a.onclick = () => {
+        //  console.log(i);
         a.parentElement.remove();
         toplam--;
         totalKismi.textContent = toplam;
-        //  silinecekIndis = i;
-        // console.log(silinecekIndis);
-        //liste.splice(i, 1);
+        //Listeden silinmesini istedigim elemanin indisini bu sekilde buluyorum
+        //console.log(silinecekIndis);
+        //liste.splice(silinecekIndis + 1, 1);
         //console.log(liste);
-        //????????????????????????Burda elemanlarin indis numarasi silindikten sonra degismiyor onu ayarla
       };
     });
+
+  //Yeni Class Ekleme
+  const checkTik = document.querySelectorAll(".check-tiki").forEach((a) => {
+    a.addEventListener("click", () => {
+      if (a.style.color != "green") {
+        a.parentElement.classList.toggle("checked");
+        completedTaskTotal++; //completedTaskTotal sürekli artiyor. Onu düzelt
+      }
+    });
+  });
 });
 
 //ENTERA BASILDIGINDA GIRDI OLARAK KABUL EDILMESI

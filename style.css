@@ -95,7 +95,7 @@ ul li:nth-child(even) {
 
 li i {
   padding: 1rem;
-  color: #ea0a0a;
+  color: red;
   cursor: pointer;
 }
 
@@ -105,9 +105,11 @@ li i:hover {
 
 /* li checked class ı varsa .fa-check e olacaklar altta yazıyor*/
 li.checked > .fa-check {
-  color: #00e676;
+  color: green;
 }
-
+li.checked {
+  color: green;
+}
 li p {
   flex: 1;
   font-size: 1.3rem;
