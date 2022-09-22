@@ -86,6 +86,7 @@ ul li {
 ul li {
   background-color: #eee;
   font-weight: bold;
+  border-radius: 10px;
 }
 
 ul li:nth-child(even) {
