@@ -49,7 +49,10 @@ const elemanEkleme = (addButton.onclick = () => {
         liste.splice(silinecekIndis, 1); //splice yöntemi ve 1 ile de listeden kalici olarak sildik. Silmemizin amaci yukarda tami,löamis oldugumuz ; Eger icerde daha önce girilmis deger varsa bi daha girilmesin oldugu icin, eger listeden silmezsek ekrandan silsek bile listede hala olacagi icin bi daha giremeyiz.
 
         // console.log(liste);
-
+        if (a.parentElement.classList.contains("checked")) {
+          completedTaskTotal--;
+          completed.textContent = completedTaskTotal;
+        }
         a.parentElement.remove(); //Burda da ekrandan sildik.
         toplam--;
         totalKismi.textContent = toplam;
@@ -62,7 +65,9 @@ const elemanEkleme = (addButton.onclick = () => {
       if (a.parentElement.classList.contains("checked")) {
         a.parentElement.classList.remove("checked");
         completedTaskTotal--;
-      } else {
+      } //checked isminde bir class olup olmadigini kontrol ettik
+      //varsa checked classini sildik. ve completed kismindan bir azalttik
+      else {
         a.parentElement.classList.add("checked");
         completedTaskTotal++;
       }
