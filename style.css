@@ -8,7 +8,11 @@
 
 body {
   height: 100vh;
-  background-image: linear-gradient(#a514df, #d43bc0);
+
+  background-image: url("./images/containerImage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,8 +23,13 @@ body {
   width: 60vw;
   height: 80vh;
   border-radius: 50px;
-  box-shadow: 2px 2px 20px rgba(34, 24, 24, 0.911);
-  background-color: rgb(234, 193, 253);
+  box-shadow: 2px 2px 20px rgb(34, 24, 24);
+  /*background-image: url("./images/backgroundImage.jpg");
+  opacity: 0.8; */
+  background-color: rgba(5, 5, 5, 0.774);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +37,7 @@ body {
 
 header {
   font-size: 3rem;
-  color: rgb(41, 41, 41);
+  color: rgb(203, 4, 4);
   text-shadow: 3px 5px 10px black;
   text-align: center;
   padding: 1rem;
@@ -52,7 +61,7 @@ header {
 #todo-button {
   height: 3rem;
   width: 20%;
-  background-color: #5d20bf;
+  background-color: #084aae;
   color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
@@ -63,7 +72,10 @@ header {
 #todo-button:hover {
   opacity: 0.3;
 }
-
+.sonuc {
+  color: rgb(203, 4, 4);
+  font-weight: 800;
+}
 .todos {
   width: 80%;
   margin-top: 2rem;
