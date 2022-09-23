@@ -59,10 +59,14 @@ const elemanEkleme = (addButton.onclick = () => {
   //Yeni Class Ekleme
   const checkTik = document.querySelectorAll(".check-tiki").forEach((a) => {
     a.addEventListener("click", () => {
-      if (a.style.color != "green") {
-        a.parentElement.classList.toggle("checked");
-        completedTaskTotal++; //completedTaskTotal sürekli artiyor. Onu düzelt
+      if (a.parentElement.classList.contains("checked")) {
+        a.parentElement.classList.remove("checked");
+        completedTaskTotal--;
+      } else {
+        a.parentElement.classList.add("checked");
+        completedTaskTotal++;
       }
+      completed.textContent = completedTaskTotal;
     });
   });
 });
