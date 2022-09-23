@@ -96,13 +96,13 @@ ul li {
 }
 
 ul li {
-  background-color: #eee;
+  background-color: rgb(232, 232, 232);
   font-weight: bold;
   border-radius: 10px;
 }
 
 ul li:nth-child(even) {
-  background: #dde6f5;
+  background: #91adde;
 }
 
 li i {
